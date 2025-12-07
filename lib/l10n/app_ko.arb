@@ -1,0 +1,23 @@
+{
+  "@@locale": "ko",
+  "appTitle": "포맷킷",
+  "@appTitle": {
+    "description": "FormatKit 애플리케이션의 제목"
+  },
+  "home": "홈",
+  "@home": {
+    "description": "홈 화면의 레이블"
+  },
+  "formats": "포맷",
+  "@formats": {
+    "description": "포맷 화면의 레이블"
+  },
+  "history": "기록",
+  "@history": {
+    "description": "기록 화면의 레이블"
+  },
+  "settings": "설정",
+  "@settings": {
+    "description": "설정 화면의 레이블"
+  }
+}

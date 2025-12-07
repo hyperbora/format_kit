@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:format_kit/l10n/app_localizations.dart';
 import 'package:format_kit/screens/main_scaffold.dart';
 
 class FormatKitApp extends StatelessWidget {
@@ -8,6 +10,13 @@ class FormatKitApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'FormatKit',
+      supportedLocales: const [Locale('en'), Locale('ko')],
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
       theme: ThemeData.light().copyWith(
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           backgroundColor: Colors.white,

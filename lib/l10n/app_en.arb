@@ -1,0 +1,23 @@
+{
+  "@@locale": "en",
+  "appTitle": "FormatKit",
+  "@appTitle": {
+    "description": "Title for the FormatKit application"
+  },
+  "home": "Home",
+  "@home": {
+    "description": "Label for the home screen"
+  },
+  "formats": "Formats",
+  "@formats": {
+    "description": "Label for the formats screen"
+  },
+  "history": "History",
+  "@history": {
+    "description": "Label for the history screen"
+  },
+  "settings": "Settings",
+  "@settings": {
+    "description": "Label for the settings screen"
+  }
+}

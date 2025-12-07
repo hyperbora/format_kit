@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:format_kit/l10n/app_localizations.dart';
 import 'package:format_kit/screens/formats_screen.dart';
 import 'package:format_kit/screens/history_screen.dart';
 import 'package:format_kit/screens/home_screen.dart';
@@ -29,9 +30,10 @@ class _MainScaffoldState extends State<MainScaffold> {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('FormatKit'),
+        title: Text(loc.appTitle),
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(1),
           child: Container(height: 1, color: Colors.grey.shade300),
@@ -48,22 +50,22 @@ class _MainScaffoldState extends State<MainScaffold> {
           type: BottomNavigationBarType.fixed,
           currentIndex: _selectedIndex,
           onTap: _onItemTapped,
-          items: const [
+          items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.home_outlined),
-              label: 'Home',
+              label: loc.home,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.format_shapes),
-              label: 'Formats',
+              label: loc.formats,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.history),
-              label: 'History',
+              label: loc.history,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.settings_outlined),
-              label: 'Settings',
+              label: loc.settings,
             ),
           ],
         ),
