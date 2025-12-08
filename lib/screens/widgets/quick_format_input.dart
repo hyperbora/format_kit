@@ -1,25 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:format_kit/providers/quick_input_provider.dart';
 
-class QuickFormatInput extends StatefulWidget {
-  const QuickFormatInput({super.key, this.onChanged});
-
-  final ValueChanged<String>? onChanged;
-
-  @override
-  State<QuickFormatInput> createState() => _QuickFormatInputState();
-}
-
-class _QuickFormatInputState extends State<QuickFormatInput> {
-  final _controller = TextEditingController();
+class QuickFormatInput extends ConsumerWidget {
+  const QuickFormatInput({super.key});
 
   @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
@@ -28,14 +15,15 @@ class _QuickFormatInputState extends State<QuickFormatInput> {
         border: Border.all(color: Colors.grey.shade300),
       ),
       child: TextField(
-        controller: _controller,
         maxLines: 6,
         minLines: 4,
         decoration: const InputDecoration(
           hintText: "여기에 텍스트를 입력하거나 붙여넣기 하세요",
           border: InputBorder.none,
         ),
-        onChanged: widget.onChanged,
+        onChanged: (value) {
+          ref.read(quickInputProvider.notifier).updateText(value);
+        },
       ),
     );
   }
