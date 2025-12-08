@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:format_kit/l10n/app_localizations.dart';
 import 'package:format_kit/screens/formats_screen.dart';
 import 'package:format_kit/screens/history_screen.dart';
-import 'package:format_kit/screens/home_screen.dart';
+import 'package:format_kit/screens/home/home_screen.dart';
 import 'package:format_kit/screens/settings_screen.dart';
 
 class MainScaffold extends StatefulWidget {
