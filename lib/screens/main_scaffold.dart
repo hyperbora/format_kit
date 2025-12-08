@@ -31,9 +31,12 @@ class _MainScaffoldState extends State<MainScaffold> {
   @override
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context)!;
+
+    final screenTitles = [loc.home, loc.formats, loc.history, loc.settings];
+
     return Scaffold(
       appBar: AppBar(
-        title: Text(loc.appTitle),
+        title: Text(screenTitles[_selectedIndex]),
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(1),
           child: Container(height: 1, color: Colors.grey.shade300),
