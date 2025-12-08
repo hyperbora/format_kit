@@ -42,7 +42,7 @@ class _MainScaffoldState extends State<MainScaffold> {
           child: Container(height: 1, color: Colors.grey.shade300),
         ),
       ),
-      body: _screens.elementAt(_selectedIndex),
+      body: SafeArea(child: _screens.elementAt(_selectedIndex)),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           border: Border(
