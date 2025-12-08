@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:format_kit/screens/widgets/quick_format_input.dart';
+import 'package:format_kit/screens/home/widgets/input_info_section.dart';
+import 'package:format_kit/screens/home/widgets/quick_format_input.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -12,6 +13,7 @@ class HomeScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: const [
           QuickFormatInput(),
+          InputInfoSection(),
           SizedBox(height: 16),
           QuickFormatActions(),
           SizedBox(height: 24),
