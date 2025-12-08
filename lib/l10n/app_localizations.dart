@@ -127,6 +127,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Settings'**
   String get settings;
+
+  /// Hint text for the quick format input field
+  ///
+  /// In en, this message translates to:
+  /// **'Enter or paste your text here'**
+  String get quickFormatInputHint;
 }
 
 class _AppLocalizationsDelegate

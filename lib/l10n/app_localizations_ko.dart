@@ -22,4 +22,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get settings => '설정';
+
+  @override
+  String get quickFormatInputHint => '여기에 텍스트를 입력하거나 붙여넣기 하세요';
 }

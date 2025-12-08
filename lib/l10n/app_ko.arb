@@ -19,5 +19,9 @@
   "settings": "설정",
   "@settings": {
     "description": "설정 화면의 레이블"
+  },
+  "quickFormatInputHint": "여기에 텍스트를 입력하거나 붙여넣기 하세요",
+  "@quickFormatInputHint": {
+    "description": "빠른 포맷 입력 필드의 힌트 텍스트"
   }
 }

@@ -19,5 +19,9 @@
   "settings": "Settings",
   "@settings": {
     "description": "Label for the settings screen"
+  },
+  "quickFormatInputHint": "Enter or paste your text here",
+  "@quickFormatInputHint": {
+    "description": "Hint text for the quick format input field"
   }
 }
