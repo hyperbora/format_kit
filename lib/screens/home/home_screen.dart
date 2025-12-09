@@ -17,13 +17,7 @@ class HomeScreen extends StatelessWidget {
           SizedBox(height: 16),
           QuickFormatActions(),
           SizedBox(height: 24),
-          FormatTypeSelector(),
-          SizedBox(height: 24),
           FormatPreviewCard(),
-          SizedBox(height: 24),
-          RecentHistorySection(),
-          SizedBox(height: 24),
-          FavoriteFormatsSection(),
         ],
       ),
     );
@@ -47,21 +41,6 @@ class QuickFormatActions extends StatelessWidget {
   }
 }
 
-class FormatTypeSelector extends StatelessWidget {
-  const FormatTypeSelector({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 48,
-      padding: const EdgeInsets.symmetric(horizontal: 8),
-      decoration: _boxDecoration(),
-      alignment: Alignment.centerLeft,
-      child: const Text("포맷 타입 선택 (가로 스크롤 예정)"),
-    );
-  }
-}
-
 class FormatPreviewCard extends StatelessWidget {
   const FormatPreviewCard({super.key});
 
@@ -71,32 +50,6 @@ class FormatPreviewCard extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       decoration: _boxDecoration(),
       child: const Text("포매팅 결과 미리보기 (Preview 카드)"),
-    );
-  }
-}
-
-class RecentHistorySection extends StatelessWidget {
-  const RecentHistorySection({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: _boxDecoration(),
-      child: const Text("최근 포매팅 기록 섹션"),
-    );
-  }
-}
-
-class FavoriteFormatsSection extends StatelessWidget {
-  const FavoriteFormatsSection({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: _boxDecoration(),
-      child: const Text("즐겨찾기 포맷 섹션"),
     );
   }
 }
