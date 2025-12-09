@@ -23,5 +23,35 @@
   "quickFormatInputHint": "여기에 텍스트를 입력하거나 붙여넣기 하세요",
   "@quickFormatInputHint": {
     "description": "빠른 포맷 입력 필드의 힌트 텍스트"
+  },
+  "chars": "{chars} 글자수",
+  "@chars": {
+    "description": "텍스트의 글자 수를 나타냄",
+    "placeholders": {
+      "chars": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "lines": "{lines} 줄수",
+  "@lines": {
+    "description": "텍스트의 줄 수를 나타냄",
+    "placeholders": {
+      "lines": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "bytes": "{bytes} 바이트",
+  "@bytes": {
+    "description": "텍스트의 바이트 수를 나타냄",
+    "placeholders": {
+      "bytes": {
+        "type": "int",
+        "example": "1"
+      }
+    }
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:format_kit/l10n/app_localizations.dart';
 import 'package:format_kit/providers/input_stats_provider.dart';
 
 class InputInfoSection extends ConsumerWidget {
@@ -8,16 +9,17 @@ class InputInfoSection extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final stats = ref.watch(inputStatsProvider);
+    final loc = AppLocalizations.of(context)!;
 
     return Padding(
       padding: const EdgeInsets.only(top: 8),
       child: Row(
         children: [
-          _infoChip("${stats.charCount} chars"),
+          _infoChip(loc.chars(stats.charCount)),
           const SizedBox(width: 8),
-          _infoChip("${stats.lineCount} lines"),
+          _infoChip(loc.lines(stats.lineCount)),
           const SizedBox(width: 8),
-          _infoChip("${stats.byteCount} bytes"),
+          _infoChip(loc.bytes(stats.byteCount)),
         ],
       ),
     );

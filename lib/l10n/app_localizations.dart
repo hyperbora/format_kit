@@ -133,6 +133,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Enter or paste your text here'**
   String get quickFormatInputHint;
+
+  /// Indicates the number of characters in the text
+  ///
+  /// In en, this message translates to:
+  /// **'{chars} chars'**
+  String chars(int chars);
+
+  /// Indicates the number of lines in the text
+  ///
+  /// In en, this message translates to:
+  /// **'{lines} lines'**
+  String lines(int lines);
+
+  /// Indicates the number of bytes in the text
+  ///
+  /// In en, this message translates to:
+  /// **'{bytes} bytes'**
+  String bytes(int bytes);
 }
 
 class _AppLocalizationsDelegate

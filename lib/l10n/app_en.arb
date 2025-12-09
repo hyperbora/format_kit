@@ -23,5 +23,35 @@
   "quickFormatInputHint": "Enter or paste your text here",
   "@quickFormatInputHint": {
     "description": "Hint text for the quick format input field"
+  },
+  "chars": "{chars} chars",
+  "@chars": {
+    "description": "Indicates the number of characters in the text",
+    "placeholders": {
+      "chars": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "lines": "{lines} lines",
+  "@lines": {
+    "description": "Indicates the number of lines in the text",
+    "placeholders": {
+      "lines": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "bytes": "{bytes} bytes",
+  "@bytes": {
+    "description": "Indicates the number of bytes in the text",
+    "placeholders": {
+      "bytes": {
+        "type": "int",
+        "example": "1"
+      }
+    }
   }
 }

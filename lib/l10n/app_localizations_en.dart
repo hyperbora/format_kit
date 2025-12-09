@@ -25,4 +25,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get quickFormatInputHint => 'Enter or paste your text here';
+
+  @override
+  String chars(int chars) {
+    return '$chars chars';
+  }
+
+  @override
+  String lines(int lines) {
+    return '$lines lines';
+  }
+
+  @override
+  String bytes(int bytes) {
+    return '$bytes bytes';
+  }
 }

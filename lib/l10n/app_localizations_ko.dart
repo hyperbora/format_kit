@@ -25,4 +25,19 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get quickFormatInputHint => '여기에 텍스트를 입력하거나 붙여넣기 하세요';
+
+  @override
+  String chars(int chars) {
+    return '$chars 글자수';
+  }
+
+  @override
+  String lines(int lines) {
+    return '$lines 줄수';
+  }
+
+  @override
+  String bytes(int bytes) {
+    return '$bytes 바이트';
+  }
 }
