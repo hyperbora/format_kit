@@ -216,6 +216,15 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_widget_kit:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: c5511d3c389eba15290d29b400f777acd0d95618
+      url: "https://github.com/hyperbora/flutter_widget_kit.git"
+    source: git
+    version: "0.0.1"
   glob:
     dependency: transitive
     description:
