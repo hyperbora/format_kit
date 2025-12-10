@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:format_kit/l10n/app_localizations.dart';
-import 'package:format_kit/providers/quick_input_provider.dart';
+import 'package:format_kit/providers/quick_input_history_provider.dart';
 
 class QuickFormatInput extends ConsumerWidget {
   const QuickFormatInput({super.key});
@@ -9,6 +9,8 @@ class QuickFormatInput extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final loc = AppLocalizations.of(context)!;
+    final controller = ref.read(quickInputHistoryProvider.notifier).controller;
+
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
@@ -23,9 +25,7 @@ class QuickFormatInput extends ConsumerWidget {
           hintText: loc.quickFormatInputHint,
           border: InputBorder.none,
         ),
-        onChanged: (value) {
-          ref.read(quickInputProvider.notifier).updateText(value);
-        },
+        controller: controller,
       ),
     );
   }

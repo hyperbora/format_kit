@@ -16,8 +16,6 @@ class HomeScreen extends StatelessWidget {
           InputInfoSection(),
           SizedBox(height: 16),
           QuickFormatActions(),
-          SizedBox(height: 24),
-          FormatPreviewCard(),
         ],
       ),
     );
@@ -39,28 +37,6 @@ class QuickFormatActions extends StatelessWidget {
       ],
     );
   }
-}
-
-class FormatPreviewCard extends StatelessWidget {
-  const FormatPreviewCard({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: _boxDecoration(),
-      child: const Text("포매팅 결과 미리보기 (Preview 카드)"),
-    );
-  }
-}
-
-// 🔧 공통 데코레이션
-BoxDecoration _boxDecoration() {
-  return BoxDecoration(
-    color: Colors.white,
-    borderRadius: BorderRadius.circular(12),
-    border: Border.all(color: Colors.grey.shade300),
-  );
 }
 
 // 🔧 임시 버튼 위젯 (스켈레톤용)
