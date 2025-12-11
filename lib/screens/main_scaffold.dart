@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:format_kit/l10n/app_localizations.dart';
 import 'package:format_kit/screens/formats_screen.dart';
 import 'package:format_kit/screens/history_screen.dart';
 import 'package:format_kit/screens/home/home_screen.dart';
 import 'package:format_kit/screens/settings_screen.dart';
+import 'package:format_kit/providers/quick_input_history_provider.dart';
 
 class MainScaffold extends StatefulWidget {
   const MainScaffold({super.key});
@@ -37,6 +39,28 @@ class _MainScaffoldState extends State<MainScaffold> {
     return Scaffold(
       appBar: AppBar(
         title: Text(screenTitles[_selectedIndex]),
+        actions: [
+          if (_screens[_selectedIndex] is HomeScreen)
+            Consumer(
+              builder: (context, ref, _) {
+                final state = ref.watch(quickInputHistoryProvider);
+                final notifier = ref.read(quickInputHistoryProvider.notifier);
+
+                return Row(
+                  children: [
+                    IconButton(
+                      icon: const Icon(Icons.undo),
+                      onPressed: state.canUndo ? notifier.undo : null,
+                    ),
+                    IconButton(
+                      icon: const Icon(Icons.redo),
+                      onPressed: state.canRedo ? notifier.redo : null,
+                    ),
+                  ],
+                );
+              },
+            ),
+        ],
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(1),
           child: Container(height: 1, color: Colors.grey.shade300),

@@ -1,9 +1,11 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:format_kit/models/quick_input_history_state.dart';
 
 class QuickInputHistoryNotifier extends StateNotifier<QuickInputHistoryState> {
   final TextEditingController controller = TextEditingController();
+  Timer? _debounce;
 
   QuickInputHistoryNotifier()
     : super(QuickInputHistoryState(history: [''], index: 0)) {
@@ -14,16 +16,20 @@ class QuickInputHistoryNotifier extends StateNotifier<QuickInputHistoryState> {
   void _onTextChanged() {
     final newText = controller.text;
 
-    // 현재 index 뒤의 히스토리 제거 (redo stack 초기화)
-    final trimmed = state.history.sublist(0, state.index + 1);
+    // 기존 타이머가 있으면 취소
+    _debounce?.cancel();
 
-    // 동일 텍스트 반복 push 방지
-    if (trimmed.isNotEmpty && trimmed.last == newText) return;
+    // 350ms debounce 후 히스토리에 저장
+    _debounce = Timer(const Duration(milliseconds: 350), () {
+      final trimmed = state.history.sublist(0, state.index + 1);
 
-    state = QuickInputHistoryState(
-      history: [...trimmed, newText],
-      index: trimmed.length,
-    );
+      if (trimmed.isNotEmpty && trimmed.last == newText) return;
+
+      state = QuickInputHistoryState(
+        history: [...trimmed, newText],
+        index: trimmed.length,
+      );
+    });
   }
 
   void undo() {
@@ -55,6 +61,13 @@ class QuickInputHistoryNotifier extends StateNotifier<QuickInputHistoryState> {
     controller.selection = TextSelection.collapsed(
       offset: controller.text.length,
     );
+  }
+
+  @override
+  void dispose() {
+    _debounce?.cancel();
+    controller.dispose();
+    super.dispose();
   }
 }
 
