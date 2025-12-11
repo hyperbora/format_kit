@@ -19,8 +19,6 @@ class QuickFormatInput extends ConsumerWidget {
         border: Border.all(color: Colors.grey.shade300),
       ),
       child: TextField(
-        maxLines: 6,
-        minLines: 4,
         decoration: InputDecoration(
           hintText: loc.quickFormatInputHint,
           border: InputBorder.none,

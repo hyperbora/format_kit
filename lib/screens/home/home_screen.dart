@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:format_kit/providers/quick_input_actions_provider.dart';
 import 'package:format_kit/screens/home/widgets/input_info_section.dart';
 import 'package:format_kit/screens/home/widgets/quick_format_input.dart';
 
@@ -27,14 +29,35 @@ class QuickFormatActions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(child: _fakeButton("Paste")),
-        const SizedBox(width: 12),
-        Expanded(child: _fakeButton("Clear")),
-        const SizedBox(width: 12),
-        Expanded(child: _fakeButton("Format")),
-      ],
+    return Consumer(
+      builder: (context, ref, _) {
+        final actions = ref.read(quickInputActionsProvider.notifier);
+
+        return Row(
+          children: [
+            Expanded(
+              child: GestureDetector(
+                onTap: actions.paste,
+                child: _fakeButton("Paste"),
+              ),
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: GestureDetector(
+                onTap: actions.clear,
+                child: _fakeButton("Clear"),
+              ),
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: GestureDetector(
+                onTap: actions.format,
+                child: _fakeButton("Format"),
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 }

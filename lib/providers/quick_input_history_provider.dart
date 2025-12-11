@@ -63,6 +63,16 @@ class QuickInputHistoryNotifier extends StateNotifier<QuickInputHistoryState> {
     );
   }
 
+  void pushHistory(String text) {
+    final trimmed = state.history.sublist(0, state.index + 1);
+    if (trimmed.isNotEmpty && trimmed.last == text) return;
+
+    state = QuickInputHistoryState(
+      history: [...trimmed, text],
+      index: trimmed.length,
+    );
+  }
+
   @override
   void dispose() {
     _debounce?.cancel();
