@@ -7,12 +7,12 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return Padding(
       padding: const EdgeInsets.all(16),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: const [
-          QuickFormatInput(),
+          Expanded(child: QuickFormatInput()),
+          SizedBox(height: 12),
           InputInfoSection(),
           SizedBox(height: 16),
           QuickFormatActions(),
