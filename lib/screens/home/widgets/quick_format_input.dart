@@ -23,6 +23,9 @@ class QuickFormatInput extends ConsumerWidget {
           hintText: loc.quickFormatInputHint,
           border: InputBorder.none,
         ),
+        minLines: null,
+        maxLines: null,
+        expands: false,
         controller: controller,
       ),
     );
