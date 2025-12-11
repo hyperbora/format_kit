@@ -40,4 +40,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String bytes(int bytes) {
     return '$bytes bytes';
   }
+
+  @override
+  String get undoTooltip => 'Undo';
+
+  @override
+  String get redoTooltip => 'Redo';
 }

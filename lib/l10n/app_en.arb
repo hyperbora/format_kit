@@ -53,5 +53,13 @@
         "example": "1"
       }
     }
+  },
+  "undoTooltip": "Undo",
+  "@undoTooltip": {
+    "description": "Tooltip for the undo button"
+  },
+  "redoTooltip": "Redo",
+  "@redoTooltip": {
+    "description": "Tooltip for the redo button"
   }
 }

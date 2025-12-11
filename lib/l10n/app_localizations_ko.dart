@@ -40,4 +40,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String bytes(int bytes) {
     return '$bytes 바이트';
   }
+
+  @override
+  String get undoTooltip => '실행 취소';
+
+  @override
+  String get redoTooltip => '다시 실행';
 }

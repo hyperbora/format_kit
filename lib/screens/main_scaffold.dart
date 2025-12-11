@@ -50,10 +50,12 @@ class _MainScaffoldState extends State<MainScaffold> {
                   children: [
                     IconButton(
                       icon: const Icon(Icons.undo),
+                      tooltip: loc.undoTooltip,
                       onPressed: state.canUndo ? notifier.undo : null,
                     ),
                     IconButton(
                       icon: const Icon(Icons.redo),
+                      tooltip: loc.redoTooltip,
                       onPressed: state.canRedo ? notifier.redo : null,
                     ),
                   ],

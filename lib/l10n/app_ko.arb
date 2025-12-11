@@ -53,5 +53,13 @@
         "example": "1"
       }
     }
+  },
+  "undoTooltip": "실행 취소",
+  "@undoTooltip": {
+    "description": "실행 취소 버튼의 툴팁"
+  },
+  "redoTooltip": "다시 실행",
+  "@redoTooltip": {
+    "description": "다시 실행 버튼의 툴팁"
   }
 }

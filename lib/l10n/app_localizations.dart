@@ -151,6 +151,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{bytes} bytes'**
   String bytes(int bytes);
+
+  /// Tooltip for the undo button
+  ///
+  /// In en, this message translates to:
+  /// **'Undo'**
+  String get undoTooltip;
+
+  /// Tooltip for the redo button
+  ///
+  /// In en, this message translates to:
+  /// **'Redo'**
+  String get redoTooltip;
 }
 
 class _AppLocalizationsDelegate
