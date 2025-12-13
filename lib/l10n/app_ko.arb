@@ -61,5 +61,9 @@
   "redoTooltip": "다시 실행",
   "@redoTooltip": {
     "description": "다시 실행 버튼의 툴팁"
+  },
+  "pasteEmptyMessage": "붙여넣을 텍스트가 없습니다",
+  "@pasteEmptyMessage": {
+    "description": "붙여넣기 시도 시 텍스트가 없을 때 표시되는 메시지"
   }
 }

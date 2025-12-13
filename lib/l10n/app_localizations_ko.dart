@@ -46,4 +46,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get redoTooltip => '다시 실행';
+
+  @override
+  String get pasteEmptyMessage => '붙여넣을 텍스트가 없습니다';
 }

@@ -61,5 +61,9 @@
   "redoTooltip": "Redo",
   "@redoTooltip": {
     "description": "Tooltip for the redo button"
+  },
+  "pasteEmptyMessage": "No text to paste",
+  "@pasteEmptyMessage": {
+    "description": "Message displayed when there is no text to paste"
   }
 }

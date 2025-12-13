@@ -163,6 +163,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Redo'**
   String get redoTooltip;
+
+  /// Message displayed when there is no text to paste
+  ///
+  /// In en, this message translates to:
+  /// **'No text to paste'**
+  String get pasteEmptyMessage;
 }
 
 class _AppLocalizationsDelegate

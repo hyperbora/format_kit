@@ -2,6 +2,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:format_kit/services/quick_format_service.dart';
 import 'quick_input_history_provider.dart';
+import 'paste_result.dart';
 
 final quickInputActionsProvider = NotifierProvider<QuickInputActions, void>(
   QuickInputActions.new,
@@ -15,12 +16,18 @@ class QuickInputActions extends Notifier<void> {
       ref.read(quickInputHistoryProvider.notifier);
 
   /// 📌 붙여넣기
-  Future<void> paste() async {
+  Future<PasteResult> paste() async {
     final data = await Clipboard.getData(Clipboard.kTextPlain);
-    final text = data?.text ?? "";
+    final text = data?.text;
+
+    if (text == null || text.trim().isEmpty) {
+      return PasteResult.emptyClipboard;
+    }
 
     _history.controller.text = text;
     _history.pushHistory(text);
+
+    return PasteResult.success;
   }
 
   /// 📌 입력 전체 삭제

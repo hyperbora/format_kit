@@ -46,4 +46,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get redoTooltip => 'Redo';
+
+  @override
+  String get pasteEmptyMessage => 'No text to paste';
 }

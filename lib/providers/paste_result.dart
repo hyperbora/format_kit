@@ -1,0 +1,1 @@
+enum PasteResult { success, emptyClipboard }
