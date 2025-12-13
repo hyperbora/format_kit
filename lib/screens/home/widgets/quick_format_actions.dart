@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:format_kit/l10n/app_localizations.dart';
 import 'package:format_kit/providers/quick_input_actions_provider.dart';
 import 'package:format_kit/providers/paste_result.dart';
+import 'package:format_kit/ui/snackbar_helper.dart';
 
 class QuickFormatActions extends ConsumerWidget {
   const QuickFormatActions({super.key});
@@ -51,8 +52,6 @@ Future<void> _paste(BuildContext context, QuickInputActions actions) async {
   }
   if (context.mounted) {
     final loc = AppLocalizations.of(context)!;
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(SnackBar(content: Text(loc.pasteEmptyMessage)));
+    showAppSnackBar(context, loc.pasteEmptyMessage);
   }
 }
